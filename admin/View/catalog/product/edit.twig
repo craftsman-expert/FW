@@ -1,0 +1,220 @@
+{% extends "layout.twig" %}
+
+
+{% block head %}
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/decoupled-document/ckeditor.js"></script>
+{% endblock %}
+
+{% block body %}
+    {% embed 'blocks/app-content.twig' %}
+        {% block breadcrumb %}
+            {% for item in LANGUAGE.catalog.product.edit.breadcrumb %}
+                <li class="breadcrumb-item"><a href="#">{{ item }}</a></li>
+            {% endfor %}
+        {% endblock %}
+        {% block header_title %}{{ parent() }}{% endblock %}
+        {% block content_header_right %}
+            <div id="content-header-btn-group" class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-outline-primary dropdown-toggle dropdown-menu-right" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-language icon-left"></i> Language</button>
+                    <div class="dropdown-menu" id="food-select-lang-content" aria-labelledby="btnGroupDrop1" x-placement="bottom-start">
+                        {% for item in language %}
+                            <a class="dropdown-item" href="#" data-a-target="lang" data-lang="{{ item.postfix }}">{{ item.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <a href="#" data-a-target="product-update" class="btn btn-outline-primary"><i class="fa fa-save"></i></a>
+            </div>
+        {% endblock %}
+        {% block content_body %}
+            <ul class="nav nav-tabs nav-top-border ">
+                <li class="nav-item">
+                    <a class="nav-link active" id="nav-tab-link-main" data-toggle="tab" href="#tab-content-panel-main" aria-controls="tab-content-panel-main" aria-expanded="true">
+                        {{ translate('catalog', 'tab_control_nav_tab_link_main') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-tab-link-data" data-toggle="tab" href="#tab-panel-content-data" aria-controls="tab-panel-content-data" aria-expanded="false">
+                        {{ translate('catalog', 'tab_control_nav_tab_link_data') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-tab-link-images" data-toggle="tab" href="#tab-panel-content-images" aria-controls="tab-panel-content-images" aria-expanded="false">
+                        {{ translate('catalog', 'tab_control_nav_tab_link_images') }}
+                    </a>
+                </li>
+            </ul>
+
+            <div id="catalog-product-edit" class="tab-content px-1 pt-1 border-grey border-lighten-2 border-0-top">
+                <div role="tabpanel" class="tab-pane active in" id="tab-content-panel-main" aria-labelledby="nav-tab-link-main" aria-expanded="true">
+                    <div class="row">
+                        <div class="col-md-12 mb-1">
+
+                            <fieldset class="form-group">
+                                <label for="basicInput">{{ translate('catalog', 'tab_control_main_title') }}</label>
+                                <input type="text" id="product-title" class="form-control" data-form-target="input" data-name="title" value="{{ product.product_description.title }}">
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="basicInput">{{ translate('catalog', 'tab_control_main_description') }}</label>
+                                <div id="toolbar-container"></div>
+                                <div type="div" id="product-description" data-form-target="div" data-name="description">{{ product.product_description.description|raw }}</div>
+                            </fieldset>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="tab-pane" id="tab-panel-content-data" role="tabpanel" aria-labelledby="nav-tab-link-data" aria-expanded="false">
+
+                    {#  category  #}
+                    <fieldset class="form-group">
+                        <label class="d-none d-sm-block" for="product-category-lookup">{{ translate('catalog', 'tab_control_data_category') }}</label>
+                        <input type="text" id="product-category-lookup" class="form-control" placeholder="{{ translate('catalog', 'tab_control_data_category') }}" data-name="title">
+                        <select multiple="multiple" id="product-category" class="form-control" style="height: 160px; margin-top: 2px" title="fff">
+                            {% for item in product_categories %}
+                                <option value="{{ item.id }}">{{ item.title }}</option>
+                            {% endfor %}
+                        </select>
+
+                    </fieldset>
+
+                    {#  article  #}
+                    <fieldset class="form-group">
+                        <label class="d-none d-sm-block" for="product-article">{{ translate('catalog', 'tab_control_data_article') }}</label>
+                        <input type="text" id="product-article" class="form-control" data-form-target="input" data-name="article" placeholder="{{ LANGUAGE.catalog.product.tab_control.data.article }}" value="{{ product.article }}">
+                    </fieldset>
+
+                    {#  price  #}
+                    <fieldset class="form-group">
+                        <label class="d-none d-sm-block" for="product-article">{{ translate('catalog', 'tab_control_data_price') }}</label>
+                        <input type="number" id="product-price" class="form-control" data-form-target="input" data-name="price" placeholder="{{ LANGUAGE.catalog.product.tab_control.data.price }}" value="{{ product.price }}">
+                    </fieldset>
+
+                    {#  old_price  #}
+                    <fieldset class="form-group">
+                        <label class="d-none d-sm-block" for="product-article">{{ translate('catalog', 'tab_control_data_old_price') }}</label>
+                        <input type="number" id="product-old_price" class="form-control" data-form-target="input" data-name="old_price" placeholder="{{ LANGUAGE.catalog.product.tab_control.data.old_price }}" value="{{ product.old_price }}">
+                    </fieldset>
+
+                    {#  quantity_stock  #}
+                    <fieldset class="form-group">
+                        <label class="d-none d-sm-block" for="product-article">{{ translate('catalog', 'tab_control_data_quantity_stock') }}</label>
+                        <input type="number" id="product-quantity_stock" class="form-control" data-form-target="input" data-name="quantity_stock" placeholder="{{ LANGUAGE.catalog.product.tab_control.data.quantity_stock }}" value="{{ product.quantity_stock }}">
+                    </fieldset>
+
+                    {#  status  #}
+                    <fieldset class="form-group position-relative">
+                        <label class="d-none d-sm-block" for="product-article">{{ translate('catalog', 'tab_control_data_status') }}</label>
+                        <select type="select" id="product-status" class="form-control" >
+                            <option value="1" {{ (product.status == 1) ? 'selected': '' }}>{{ translate('catalog', 'tab_control_data_status_on') }}</option>
+                            <option value="0" {{ (product.status == 0) ? 'selected': '' }}>{{ translate('catalog', 'tab_control_data_status_off') }}</option>
+                        </select>
+                    </fieldset>
+
+
+                </div>
+                <div class="tab-pane" id="tab-panel-content-images" role="tabpanel" aria-labelledby="nav-tab-link-images" aria-expanded="false">
+
+                    {#  image  #}
+                    <h4 class="form-section"><i class="fa fa-image"></i> {{ translate('catalog', 'tab_control_image_main') }}</h4>
+                    <div class="table-responsive mb-5">
+                        <table id="product-table-image" class="table table-bordered mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="width-200"><img class="img-thumbnail img-fluid" src="{{ product.image }}" itemprop="thumbnail" alt=""></td>
+                                <td></td>
+                                <td style="width: 1%">
+                                    <div class="btn-group mx-2" role="group" aria-label="Second Group">
+                                        <button type="button" data-target="image-set" class="btn btn-icon btn-outline-success"><i class="fa fa-edit"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {#  images  #}
+                    <h4 class="form-section"><i class="fa fa-image"></i> {{ translate('catalog', 'tab_control_image_additional') }}</h4>
+                    <div class="table-responsive">
+                        <table id="product-table-images" class="table table-bordered mb-0">
+                            <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th style="width: 1%">
+                                    <div class="btn-group mx-2" role="group" aria-label="Second Group">
+                                        <button type="button" data-target="image-add" class="btn btn-icon btn-outline-success"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            {% for item in product_images %}
+                                <tr>
+                                    <td class="width-200"><img class="img-thumbnail img-fluid" src="{{ item.image }}" itemprop="thumbnail" alt=""></td>
+                                    <td></td>
+                                    <td style="width: 1%">
+                                        <div class="btn-group mx-2">
+                                            <button type="button" data-target="image-delete" class="btn btn-icon btn-outline-danger"><i class="fa fa-trash-o"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            {% embed "/blocks/modal-dialog.twig"  with
+                {
+                    'title': 'Мой заголовок',
+                    'size': 'modal-xl',
+                    'id': 'elfinder-modal'
+                }
+            %}
+                {% block modal_body %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="elfinder"></div>
+                        </div>
+                    </div>
+                {% endblock %}
+
+                {% block modal_footer %}
+                    <button type="button" data-btn-target="cancel" class="btn grey btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" data-btn-target="success" class="btn btn-outline-primary">OK</button>
+                {% endblock %}
+            {% endembed %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block css_bottom %}{% endblock %}
+
+{% block script_bottom %}
+    <script type="text/javascript" src="/admin/assets/js/components/crypto-js/crypto-js.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/admin/assets/css/autocomplete-suggestions.css">
+    <script src="/admin/assets/js/components/jQuery-Autocomplete/src/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="/admin/JsController/catalog/product/ProductController.js"></script>
+    <script type="text/javascript" src="/admin/assets/js/customized/catalog.product.edit.js"></script>
+
+    <!-- Section CSS -->
+    <!-- jQuery UI (REQUIRED) -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <!-- elFinder CSS (REQUIRED) -->
+    <link rel="stylesheet" type="text/css" href="/vendor/studio-42/elfinder/css/elfinder.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin/assets/elFinder-Material-Theme/Material/css/theme-light.css">
+    <script src="/admin/assets/js/jQuery_v1.12.1.js" type="text/javascript"></script>
+    <!-- elFinder JS (REQUIRED) -->
+    <script src="/vendor/studio-42/elfinder/js/elfinder.min.js"></script>
+    <!-- Extra contents editors (OPTIONAL) -->
+    <script src="/vendor/studio-42/elfinder/js/extras/editors.default.min.js"></script>
+    <script src="/vendor/studio-42/elfinder/js/i18n/elfinder.ru.js"></script>
+
+{% endblock %}

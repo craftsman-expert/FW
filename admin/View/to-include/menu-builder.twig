@@ -1,0 +1,20 @@
+{% for item in MAIN_MENU %}
+    <li class="{{ item.class }}" data-icon-set="{{ item.icon }}">
+    {% if item.root %}
+        <a href="{{ item.href }}">
+            <i class="{{ item.icon }}"></i>
+            <span class="menu-title" data-i18n="">{{ item.title }}</span>
+        </a>
+    {% else %}
+        <a class="menu-item" href="{{ item.href }}">{{ item.title }}</a>
+    {% endif %}
+    {% if not item.child is null %}
+        <ul class="menu-content">
+            {{ include(_self, {MAIN_MENU: item.child}) }}
+        </ul>
+    {% endif %}
+    </li>
+{% endfor %}
+
+
+

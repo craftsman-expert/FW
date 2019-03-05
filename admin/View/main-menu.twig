@@ -1,0 +1,22 @@
+<div id="main-menu" data-scroll-to-active="true" class="main-menu menu-dark menu-fixed menu-shadow menu-accordion">
+
+    <div class="main-menu-header">
+        <input type="text" placeholder="Search" class="menu-search form-control round"/>
+    </div>
+
+    <div class="main-menu-content">
+        <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
+
+            <li class="navigation-header">
+                <span>General</span><i class=" ft-minus" data-toggle="tooltip" data-placement="right" data-original-title="General"></i>
+            </li>
+
+            {% include 'menu-builder.twig' %}
+        </ul>
+    </div>
+    <!-- main menu footer-->
+    <div class="main-menu-footer footer-close">
+
+    </div>
+    <!-- main menu footer-->
+</div>

@@ -1,0 +1,36 @@
+{% extends "layout.twig" %}
+
+{% block head %}
+{% endblock %}
+
+{% block breadcrumb %}
+    {% for item in HEADER_TITLE.breadcrumb %}
+        <li class="breadcrumb-item"><a href="#">{{ item }}</a></li>
+    {% endfor %}
+{% endblock %}
+{% block header_title %}{{ parent() }}{% endblock %}
+{% block content_header_right %}
+    {#<div id="content-header-btn-group" class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">#}
+        {#<div class="btn-group" role="group">#}
+        {#<button class="btn btn-outline-primary dropdown-toggle dropdown-menu-right" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-language icon-left"></i> Language</button>#}
+        {#<div class="dropdown-menu" id="food-select-lang-content" aria-labelledby="btnGroupDrop1" x-placement="bottom-start">#}
+        {#{% for item in language %}#}
+        {#<a class="dropdown-item" href="#" data-a-target="lang" data-lang="{{ item.postfix }}">{{ item.name }}</a>#}
+        {#{% endfor %}#}
+        {#</div>#}
+        {#</div>#}
+        {#<a href="#" data-a-target="product-update" class="btn btn-outline-primary"><i class="fa fa-save"></i></a>#}
+    {#</div>#}
+{% endblock %}
+
+{% block content_body %}
+
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+{% block script_bottom %}
+
+{% endblock %}

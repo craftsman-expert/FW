@@ -1,0 +1,32 @@
+{
+  "translator" : "igor",
+  "language"   : "",
+  "direction"  : "ltr",
+  "dateFormat" : "d M Y H:i",
+  "fancyDateFormat" : "$1 H:i",
+  "nonameDateFormat" : "ymd-His",
+
+  "translated_content"   : {
+
+    "table_checkout_th_image": "",
+    "table_checkout_th_product_name": "Название",
+    "table_checkout_th_quantity": "Количество",
+    "table_checkout_th_unit_price": "Цена",
+    "table_checkout_th_amount": "Сумма",
+
+
+    "checkout_count": "Количество:",
+    "cart_btn_checkout": "Оформить заказ",
+    "product_added_to_cart": "Товар добавлен в корзину",
+    "item_removed_from_cart": "Товар удалён из корзины",
+
+    "order_created": "Ваш заказ был размещен!",
+    "order_not_created": "Заказ создать не удалось!",
+
+    "cart_empty": "В корзине пусто",
+
+    "total_due": "Общая сумма",
+    "total": "Всего"
+  }
+
+}

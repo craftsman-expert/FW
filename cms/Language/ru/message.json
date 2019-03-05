@@ -1,0 +1,21 @@
+{
+  "translator": "igor",
+  "language": "",
+  "direction": "ltr",
+  "dateFormat": "d M Y H:i",
+  "fancyDateFormat": "$1 H:i",
+  "nonameDateFormat": "ymd-His",
+
+  "translated_content": {
+
+    "success": "Успех!",
+    "info": "Информация!",
+    "warning": "Внимание!",
+    "error": "Ошибка!",
+    "unknown_error": "Неизвестная ошибка!",
+
+    "user_access_denied": "Доступ запрещен!",
+    "user_authorization_required": "Для выполнения этого действия требуется авторизация!",
+    "authorization_temporarily_unavailable": "Авторизация временно недоступна!"
+  }
+}

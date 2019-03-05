@@ -1,0 +1,49 @@
+{
+  "name": "igorp/rit",
+  "type": "project",
+  "description": "CSRT Company",
+  "authors": [
+    {
+      "name": "Igor Popryduhin",
+      "email": "igor.popryduhin@yandex.ru"
+    }
+  ],
+
+  "repositories": [
+
+    {
+      "type": "git",
+      "url": "https://github.com/openid/php-openid.git"
+    }
+  ],
+
+  "require": {
+    "php": ">=7.2.0",
+    "monolog/monolog": "^1.23",
+    "twig/twig": "^2.0",
+    "chillerlan/php-qrcode": "dev-master",
+    "imagine/imagine": "^1.2",
+    "studio-42/elfinder": "2.1.46",
+    "guzzlehttp/guzzle": "6.3.3",
+    "ext-json": "*",
+    "nexmo/client": "^1.6",
+    "giggsey/libphonenumber-for-php": "^8.10",
+    "ext-memcache": "*"
+
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Engine\\": "engine",
+      "Cms\\": "cms",
+      "Admin\\": "admin",
+      "Api\\": "api",
+      "General\\": "general"
+    },
+
+    "files": [
+      "engine/defines.php",
+      "engine/function.php"
+    ]
+  }
+}

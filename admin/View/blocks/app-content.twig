@@ -1,0 +1,23 @@
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row mb-2">
+            <div class="content-header-left col-md-6 col-12 mb-2 ">
+                <div class="row breadcrumbs-top d-none">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            {% block breadcrumb %}{% endblock %}
+                        </ol>
+                    </div>
+                </div>
+                <h3 class="content-header-title mb-0">{% block header_title %}{{ HEADER_TITLE }}{% endblock %}</h3>
+                <h6 class="">{{ HEADER_SUB_TITLE }}</h6>
+            </div>
+            <div class="content-header-right col-md-6 col-12">
+                {% block content_header_right %}{% endblock %}
+            </div>
+        </div>
+        <div class="content-body">
+            {% block content_body %}{% endblock %}
+        </div>
+    </div>
+</div>

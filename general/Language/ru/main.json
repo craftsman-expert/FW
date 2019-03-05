@@ -1,0 +1,29 @@
+{
+  "translator": "igor",
+  "language": "",
+  "direction": "ltr",
+  "dateFormat": "d M Y H:i",
+  "fancyDateFormat": "$1 H:i",
+  "nonameDateFormat": "ymd-His",
+
+  "translated_content": {
+
+    "btn_ok": "Хорошо",
+    "btn_cancel": "Отмена",
+    "btn_delete": "Удалить",
+    "btn_clear": "Очистить",
+    "btn_sig_in": "Войти",
+    "btn_get_code": "Получить код",
+
+    "enter_phone_number": "Введите свой номер телефона.",
+
+    "btn_yes": "Да",
+    "btn_no": "Нет",
+
+    "btn_authorization": "Авторизоваться",
+
+    "sig_in_title": "Войти в супер систему",
+
+    "": ""
+  }
+}

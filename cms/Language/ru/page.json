@@ -1,0 +1,15 @@
+{
+  "translator": "name",
+  "language": "",
+  "direction": "ltr",
+  "dateFormat": "d M Y H:i",
+  "fancyDateFormat": "$1 H:i",
+  "nonameDateFormat": "ymd-His",
+
+  "translated_content": {
+
+    "page_cart_checkout_title": "Моя корзина",
+    "catalog_title": "Каталог",
+    "home_title": "Главная"
+  }
+}

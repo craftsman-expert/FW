@@ -1,0 +1,15 @@
+{
+  "translator": "name",
+  "language": "",
+  "direction": "ltr",
+  "dateFormat": "d M Y H:i",
+  "fancyDateFormat": "$1 H:i",
+  "nonameDateFormat": "ymd-His",
+
+  "translated_content": {
+
+    "page_cart_checkout_title": "我的车",
+    "catalog_title": "目录",
+    "home_title": "房子"
+  }
+}

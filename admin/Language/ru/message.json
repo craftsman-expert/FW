@@ -1,0 +1,17 @@
+{
+  "translator": "igor",
+  "language": "",
+  "direction": "ltr",
+  "dateFormat": "d M Y H:i",
+  "fancyDateFormat": "$1 H:i",
+  "nonameDateFormat": "ymd-His",
+  "translated_content": {
+
+    "success": "Успех!",
+    "info": "Информация!",
+    "warning": "Внимание!",
+    "error": "Ошибка!",
+    "unknown_error": "Неизвестная ошибка!"
+
+  }
+}

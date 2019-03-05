@@ -1,0 +1,16 @@
+{
+  "translator" : "igor",
+  "language"   : "",
+  "direction"  : "ltr",
+  "dateFormat" : "d M Y H:i",
+  "fancyDateFormat" : "$1 H:i",
+  "nonameDateFormat" : "ymd-His",
+
+  "translated_content"   : {
+
+    "my_orders": "我的訂單",
+    "notification": "通知",
+    "report_an_error": "報告錯誤"
+  }
+
+}

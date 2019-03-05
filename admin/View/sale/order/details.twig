@@ -1,0 +1,140 @@
+{% extends "layout.twig" %}
+
+
+{% block head %}{% endblock %}
+
+{% block body %}
+    {% embed 'blocks/app-content.twig' %}
+        {% block breadcrumb %}
+            {% for item in LANGUAGE.catalog.product.edit.breadcrumb %}
+                <li class="breadcrumb-item"><a href="#">{{ item }}</a></li>
+            {% endfor %}
+        {% endblock %}
+        {% block header_title %}{{ HEADER_TITLE }} {{ order.id }} {% endblock %}
+        {% block content_header_right %}
+            <div id="content-header-btn-group" class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-outline-primary dropdown-toggle dropdown-menu-right" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-check"></i> Статус</button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <a class="dropdown-item" href="card-bootstrap.html">Bootstrap Cards</a>
+                        <a class="dropdown-item" href="component-buttons-extended.html">Buttons Extended</a>
+                    </div>
+                </div>
+                <a href="#" data-a-target="product-add" class="btn btn-outline-blue"><i class="fa fa-print"></i></a>
+                <a href="#" data-a-target="product-add" class="btn btn-outline-blue"><i class="fa fa-edit"></i></a>
+                <a href="#" data-a-target="product-add" class="btn btn-outline-red"><i class="fa fa-remove"></i></a>
+                <a href="#" data-a-target="product-add" class="btn btn-outline-blue-grey"><i class="fa fa-reply"></i></a>
+            </div>
+        {% endblock %}
+        {% block content_body %}
+            <div class="row match-height">
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="card" style="height: 456.359px;">
+                        <div class="card-content">
+
+                            <div class="card-body">
+                                <h4 class="card-title">Заказ</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item" style="padding: 0.55rem 1.25rem;"><span class="float-right"><i class="fa fa-qrcode"></i></span>{{ order.id }}</li>
+                                    <li class="list-group-item" style="padding: 0.55rem 1.25rem;"><span class="float-right"><i class="fa fa-calendar"></i></span>{{ order.create_at }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {#  Клиент  #}
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="card" style="height: 456.359px;">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <h4 class="card-title">Клиент</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item" style="padding: 0.55rem 1.25rem;"><span class="float-right"><i class="fa fa-user"></i></span>{{ order.nickname }}</li>
+                                    <li class="list-group-item" style="padding: 0.55rem 1.25rem;"><span class="float-right"><i class="fa fa-openid"></i></span>{{ order.openid }}</li>
+                                    <li class="list-group-item" style="padding: 0.55rem 1.25rem;"><span class="float-right"><i class="fa fa-phone"></i></span>{{ order.phone }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="card" style="height: 456.359px;">
+                        <div class="card-content">
+
+                            <div class="card-body">
+                                <h4 class="card-title">Опции</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item" style="padding: 0.55rem 1.25rem;"><span class="float-right"><i class="fa fa-bookmark-o ml-1"></i></span>Счёт</li>
+                                    <li class="list-group-item" style="padding: 0.55rem 1.25rem;"><span class="float-right">600<i class="fa fa-bookmark-o ml-1"></i></span>Бонусные балы</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row match-height">
+                <div class="col-12">
+                    <div class="card" style="height: 456.359px;">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <h4 class="card-title">Товары</h4>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 1%">#</th>
+                                            <th style="width: 79%">Наименование</th>
+                                            <th style="width: 10%">Цена за единицу</th>
+                                            <th style="width: 10%">Количество</th>
+                                            <th style="width: 10%">Итого</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for item in order.items %}
+                                            <tr>
+                                                <th scope="row">{% set index = index + 1 %}{{ index }}</th>
+                                                <td>{{ item.title }}</td>
+                                                <td>{{ item.price }}</td>
+                                                <td>{{ item.count }}</td>
+                                                <td>{{ item.sum }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td colspan="5" style="background-color: #f5f7fa"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"></td>
+                                            <th>Сумма</th>
+                                            <td>{{ order.amount }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" class=""></td>
+                                            <th>Доставка</th>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3"></td>
+                                            <th>Итог</th>
+                                            <td>{{ order.total }}</td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                    {{ dump(order.items) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block css_bottom %}{% endblock %}
+{% block script_bottom %}
+    <script type="text/javascript" src="/admin/JsController/sale/order/OrderController.js"></script>
+    <script src="/admin/assets/js/customized/sale.order.orderManager.js"></script>
+{% endblock %}

@@ -1,0 +1,25 @@
+{
+  "translator": "igor",
+  "language": "",
+  "direction": "ltr",
+  "dateFormat": "d M Y H:i",
+  "fancyDateFormat": "$1 H:i",
+  "nonameDateFormat": "ymd-His",
+  "translated_content": {
+
+    "order_table_id": "№ Заказа",
+    "order_table_client": "Клиент",
+    "order_table_status": "Статус",
+    "order_table_amount": "Сумма",
+    "order_table_create_at": "Дата создания",
+    "order_table_update_at": "Дата изменения",
+    "order_table_options": "Опции",
+
+
+    "request_delete_order": "Вы действительно собираетесь удалить заказ?",
+    "order_deleted": "Заказ удален!",
+
+    "": ""
+
+  }
+}

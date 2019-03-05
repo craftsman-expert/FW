@@ -1,0 +1,32 @@
+{
+  "translator" : "igor",
+  "language"   : "",
+  "direction"  : "ltr",
+  "dateFormat" : "d M Y H:i",
+  "fancyDateFormat" : "$1 H:i",
+  "nonameDateFormat" : "ymd-His",
+
+  "translated_content"   : {
+
+    "table_checkout_th_image": "",
+    "table_checkout_th_product_name": "名",
+    "table_checkout_th_quantity": "數量",
+    "table_checkout_th_unit_price": "價格",
+    "table_checkout_th_amount": "總和",
+
+
+    "checkout_count": "數量：",
+    "cart_btn_checkout": "下訂單",
+    "product_added_to_cart": "物品已添加到購物車",
+    "item_removed_from_cart": "物品从购物车中删除",
+
+    "order_created": "您的訂單已下訂單",
+    "order_not_created": "訂單無法創建！",
+
+    "cart_empty": "車空了",
+
+    "total_due": "總金額",
+    "total": "總"
+  }
+
+}

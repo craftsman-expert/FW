@@ -1,0 +1,21 @@
+{
+  "translator": "igor",
+  "language": "",
+  "direction": "ltr",
+  "dateFormat": "d M Y H:i",
+  "fancyDateFormat": "$1 H:i",
+  "nonameDateFormat": "ymd-His",
+
+  "translated_content": {
+
+    "success": "成功了！",
+    "info": "信息！",
+    "warning": "警告！",
+    "error": "錯誤！",
+    "unknown_error": "未知錯誤！",
+
+    "user_access_denied": "訪問被拒絕！",
+    "user_authorization_required": "執行此操作所需的授權！",
+    "authorization_temporarily_unavailable": "授權暫時無法使用！"
+  }
+}

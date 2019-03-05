@@ -1,0 +1,23 @@
+{
+  "translator" : "igor",
+  "language"   : "",
+  "direction"  : "ltr",
+  "dateFormat" : "d M Y H:i",
+  "fancyDateFormat" : "$1 H:i",
+  "nonameDateFormat" : "ymd-His",
+
+  "translated_content"   : {
+
+    "table_checkout_th_image": "",
+    "table_checkout_th_product_name": "名",
+    "table_checkout_th_quantity": "數量",
+    "table_checkout_th_unit_price": "價格",
+    "table_checkout_th_amount": "總和",
+
+
+    "cart_btn_checkout": "下訂單",
+
+    "product_added_to_cart": "物品已添加到購物車"
+  }
+
+}

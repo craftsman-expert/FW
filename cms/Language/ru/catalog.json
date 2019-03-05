@@ -1,0 +1,23 @@
+{
+  "translator" : "igor",
+  "language"   : "",
+  "direction"  : "ltr",
+  "dateFormat" : "d M Y H:i",
+  "fancyDateFormat" : "$1 H:i",
+  "nonameDateFormat" : "ymd-His",
+
+  "translated_content"   : {
+
+    "table_checkout_th_image": "",
+    "table_checkout_th_product_name": "Название",
+    "table_checkout_th_quantity": "Количество",
+    "table_checkout_th_unit_price": "Цена",
+    "table_checkout_th_amount": "Сумма",
+
+
+    "cart_btn_checkout": "Оформить заказ",
+
+    "product_added_to_cart": "Товар добавлен в корзину"
+  }
+
+}

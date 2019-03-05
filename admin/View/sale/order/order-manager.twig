@@ -1,0 +1,50 @@
+{% extends "layout.twig" %}
+
+
+{% block head %}{% endblock %}
+
+{% block body %}
+    {% embed 'blocks/app-content.twig' %}
+        {% block breadcrumb %}
+            {% for item in LANGUAGE.catalog.product.edit.breadcrumb %}
+                <li class="breadcrumb-item"><a href="#">{{ item }}</a></li>
+            {% endfor %}
+        {% endblock %}
+        {% block header_title %}{{ parent() }}{% endblock %}
+        {% block content_header_right %}{% endblock %}
+        {% block content_body %}
+            <table id="sale-order-list" class="table table-striped compact  dataTable" aria-describedby="order-data-table" role="grid">
+                <thead>
+                <tr role="row">
+                    <th class="" data-name="id" tabindex="0"  rowspan="1" colspan="1"  style="width: 1%;">{{ translate('sale', 'order_table_id') }}</th>
+                    <th class="" data-name="client" tabindex="0"  rowspan="1" colspan="1"  style="width: auto;">{{ translate('sale', 'order_table_client') }}</th>
+                    <th class="" data-name="status" tabindex="0"  rowspan="1" colspan="1"  style="width: auto;">{{ translate('sale', 'order_table_status') }}</th>
+                    <th class="" data-name="amount" tabindex="0"  rowspan="1" colspan="1"  style="width: auto;">{{ translate('sale', 'order_table_amount') }}</th>
+                    <th class="" data-name="create_at" tabindex="0"  rowspan="1" colspan="1"  style="width: auto;">{{ translate('sale', 'order_table_create_at') }}</th>
+                    <th class="" data-name="update_at" tabindex="0"  rowspan="1" colspan="1"  style="width: auto;">{{ translate('sale', 'order_table_update_at') }}</th>
+                    <th class="" data-name="options" tabindex="0"  rowspan="1" colspan="1"  style="width: 1%;">{{ translate('sale', 'order_table_options') }}</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block css_bottom %}{% endblock %}
+{% block script_bottom %}
+    <script src="/admin/app-assets/vendors/js/tables/jquery.dataTables.min.js"></script>
+    <script src="/admin/app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="/admin/app-assets/vendors/js/tables/datatable/dataTables.select.min.js"></script>
+    <script src="/admin/app-assets/vendors/js/tables/datatable/dataTables.keyTable.min.js"></script>
+    <script src="/admin/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+
+    <script type="text/javascript" src="/admin/JsController/sale/order/OrderController.js"></script>
+    <script src="/admin/assets/js/customized/sale.order.orderManager.js"></script>
+{% endblock %}

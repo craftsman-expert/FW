@@ -1,0 +1,141 @@
+{
+  "translator": "igor",
+  "language": "",
+  "direction": "ltr",
+  "dateFormat": "d M Y H:i",
+  "fancyDateFormat": "$1 H:i",
+  "nonameDateFormat": "ymd-His",
+  "translated_content": {
+
+    "tab_control_nav_tab_link_main": "Основное",
+    "tab_control_nav_tab_link_data": "Данные",
+    "tab_control_nav_tab_link_images": "Изображения",
+
+    "tab_control_main_title": "Заголовок",
+    "tab_control_main_description": "Описание",
+    "tab_control_data_category": "Категория",
+    "tab_control_data_article": "Артикул",
+    "tab_control_data_price": "Цена",
+    "tab_control_data_old_price": "Старая цена",
+    "tab_control_data_quantity_stock": "Количество",
+    "tab_control_data_status": "Статус",
+    "tab_control_data_status_on": "Включено",
+    "tab_control_data_status_off": "Выключено",
+    "tab_control_image_main": "Основное изображение",
+    "tab_control_image_additional": "Дополнительные изобраения",
+
+    "product_list_title": "Наименование",
+    "product_list_create_at": "Дата создания",
+    "product_list_price": "Цена",
+    "product_list_options": "Опции",
+
+    "":""
+  },
+
+
+
+  "product": {
+    "list": {
+      "title": "Товары",
+      "breadcrumb": [
+        "дом",
+        "каталог",
+        "товары"
+      ],
+      "content_body": {
+        "catalog_product_list": {
+          "table": {
+            "head": {
+              "title": "Наименование",
+              "create_at": "Дата создания",
+              "price": "Цена",
+              "options": "Опции"
+            }
+          }
+        }
+      }
+    },
+    "edit": {
+      "title": "Редактирование",
+      "breadcrumb": [
+        "дом",
+        "каталог",
+        "товары",
+        "редактирование"
+      ],
+      "content_body": {
+      }
+    },
+    "message": {
+      "saved": "Сохранил!",
+      "deleted": "Удалил!"
+    },
+    "tab_control": {
+      "nav_tabs": {
+        "nav_tab_link_main": "Основное",
+        "nav_tab_link_data": "Данные",
+        "nav_tab_link_images": "Изображения"
+      },
+      "main": {
+        "title": "Заголовок",
+        "description": "Описание"
+      },
+      "data": {
+        "category": "Категория",
+        "article": "Артиккул",
+        "price": "Цена",
+        "old_price": "Старая цена",
+        "quantity_stock": "Количество на складе",
+        "status": "Статус",
+        "status_on": "Включено",
+        "status_off": "Отключено"
+      },
+      "image": {
+        "main_image_label": "Основное изображение",
+        "additional_images_label": "Дополнительные изображения"
+      }
+    }
+  },
+  "category": {
+    "list": {
+      "title": "Категории",
+      "breadcrumb": [
+        "дом",
+        "каталог",
+        "категории"
+      ],
+      "content_body": {
+        "table": {
+          "head": {
+            "category": "Категория",
+            "options": "Опции"
+          }
+        }
+      }
+    },
+    "modal": {
+      "title": "Редактор категории",
+      "modal_body": {
+        "cat_title": "Заголовок",
+        "cat_parent": "Родительская категория",
+        "cat_language": "Язык",
+        "cat_target": "Таргетинг",
+        "cat_description": "Описание"
+      },
+      "modal_footer": {
+        "close": "Закрыть",
+        "save": "Сохранить"
+      }
+    },
+    "message": {
+      "added": "Категория добавлена!",
+      "updated": "Категория обновлена!",
+      "deleted": "Категория удалена!",
+      "fk_deleted": "Нельзя удалить категорию, в ней находятся товары!"
+    }
+  },
+  "message": {
+    "saved": "Сохранил!",
+    "deleted": "Удалил!"
+  }
+}

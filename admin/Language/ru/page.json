@@ -1,0 +1,78 @@
+{
+  "translator": "igor",
+  "language": "",
+  "direction": "ltr",
+  "dateFormat": "d M Y H:i",
+  "fancyDateFormat": "$1 H:i",
+  "nonameDateFormat": "ymd-His",
+  "translated_content": {
+
+
+    "admin_page_order_ordermanager_title": "Продажи",
+    "admin_page_order_ordermanager_sub_title": "Менеджер заказов",
+
+    "admin_page_order_orderdetails_title": "Заказ №",
+    "admin_page_order_orderdetails_sub_title": "Детальная информация о заказе",
+
+    "admin_page_product_list_title": "Товары",
+    "admin_page_product_list_sub_title": "Список товаров",
+
+    "admin_page_product_new_title": "Товары",
+    "admin_page_product_new_sub_title": "Создание нового товара",
+
+    "admin_page_category_list_title": "Категории",
+    "admin_page_category_list_sub_title": "Список всех категорий",
+
+    "admin_page_file_manager_title": "Файловый менеджер",
+    "admin_page_file_manager_sub_title": "",
+
+    "": ""
+  },
+
+
+  "header_title": {
+    "admin_page_product_new": {
+      "title": "Товары",
+      "sub_title": "создание нового",
+      "breadcrumb": [
+        "Главная",
+        "каталог",
+        "товары"
+      ]
+    },
+    "admin_page_category_list": {
+      "title": "Категории",
+      "sub_title": "список категорий",
+      "breadcrumb": [
+        "Главная",
+        "каталог",
+        "категории"
+      ]
+    },
+    "admin_page_product_list": {
+      "title": "Товары",
+      "sub_title": "список товаров",
+      "breadcrumb": [
+        "Главная",
+        "каталог",
+        "товары"
+      ]
+    },
+    "admin_page_order_list": {
+      "title": "Заказы",
+      "sub_title": "список заказов",
+      "breadcrumb": [
+        "Главная",
+        "продажи",
+        "заказы"
+      ]
+    },
+    "admin_dashboard": {
+      "title": "Панель состояния",
+      "sub_title": "",
+      "breadcrumb": [
+        "Главная"
+      ]
+    }
+  }
+}

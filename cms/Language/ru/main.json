@@ -1,0 +1,28 @@
+{
+  "translator": "igor",
+  "language": "",
+  "direction": "ltr",
+  "dateFormat": "d M Y H:i",
+  "fancyDateFormat": "$1 H:i",
+  "nonameDateFormat": "ymd-His",
+
+  "translated_content": {
+
+    "btn_ok": "Хорошо",
+    "btn_cancel": "Отмена",
+    "btn_delete": "Удалить",
+    "btn_clear": "Очистить",
+    "btn_sig_in": "Войти",
+    "btn_get_code": "Получить код",
+    "btn_confirm": "Подтвердить",
+
+    "mobile": "Мобильный",
+    "enter_phone_number": "Введите здесь свой номер телефона",
+    "enter_code_confirm": "Введите здесь код подтверждения",
+    "confirmation_code_is_incorrect": "Некорректный код подтверждения",
+    "i_have_a_code": "У меня есть код",
+    "user_already_exists": "Пользователь существует!",
+    "verification_code_sent_by_sms": "Код для подтверждения отправлен по sms",
+    "invalid_phone_number": "Некорректный номер телефона"
+  }
+}

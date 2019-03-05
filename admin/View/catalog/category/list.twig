@@ -1,0 +1,147 @@
+{% extends ["layout.twig"] %}
+
+
+{% block head %}
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/decoupled-document/ckeditor.js"></script>
+{% endblock %}
+
+{% block breadcrumb %}
+    {% for item in LANGUAGE.catalog.category.list.breadcrumb %}
+        <li class="breadcrumb-item"><a href="#">{{ item }}</a></li>
+    {% endfor %}
+{% endblock %}
+
+{% block header_title %}{{ parent() }}{% endblock %}
+{% block content_header_right %}
+    <div id="content-header-btn-group" class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group" role="group">
+            <button class="btn btn-outline-primary dropdown-toggle dropdown-menu-right" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-language icon-left"></i> Language</button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start">
+                {% for item in language %}
+                    <a class="dropdown-item" href="#"  data-a-target="lang" data-lang="{{ item.postfix }}">{{ item.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <a data-a-target="category-refresh" href="#"  class="btn btn-outline-primary"><i class="fa fa-refresh"></i></a>
+        <a data-a-target="category-add" href="#" class="btn btn-outline-primary"><i class="fa fa-plus"></i></a>
+    </div>
+{% endblock %}
+
+{% block content_body %}
+    <table id="sale-order-list" class="table table-striped compact  dataTable" aria-describedby="order-data-table" role="grid">
+        <thead>
+        <tr role="row">
+            <th class="" >{{ LANGUAGE.catalog.category.list.content_body.table.head.category }}</th>
+            <th class=""  style="width: 1%;">{{ LANGUAGE.catalog.category.list.content_body.table.head.options }}</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+
+    {#  Modal  #}
+    <div class="modal text-left" id="catalog-category-edit-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel16" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel16">{{ LANGUAGE.catalog.category.modal.title }}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 mb-1 pl-5 pr-5">
+
+                            {#  id  #}
+                            <input type="number" id="category-id" value="-1" hidden>
+
+                            {#  title  #}
+                            <fieldset class="form-group">
+                                <label for="basicInput">{{ LANGUAGE.catalog.category.modal.modal_body.cat_title }}</label>
+                                <input type="text" id="category-title" class="form-control" data-form-target="input" data-name="title" value="{{ product.title }}">
+                            </fieldset>
+
+                            {#  parent_id  #}
+                            <fieldset class="form-group">
+                                <label for="basicInput">{{ LANGUAGE.catalog.category.modal.modal_body.cat_parent }}</label>
+                                <input type="text" id="catalog-category-parent" class="form-control" value="{{ product.title }}">
+                                <input type="number" id="category-parent_id"  data-form-target="input" data-name="parent_id" value="0" hidden>
+                            </fieldset>
+
+                            {#  language  #}
+                            <fieldset class="form-group position-relative">
+                                <label class="d-none d-sm-block" for="product-article">{{ LANGUAGE.catalog.category.modal.modal_body.cat_language }}</label>
+                                <select type="select" id="category-lang" class="form-control" data-form-target="select" data-name="lang">
+                                    {% for item in language %}
+                                    <option value="{{ item.postfix }}">{{ item.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </fieldset>
+
+
+                            {#  target  '_blank','_self','_parent','_top' #}
+                            <fieldset class="form-group position-relative">
+                                <label class="d-none d-sm-block" for="product-article">{{ LANGUAGE.catalog.category.modal.modal_body.cat_target }}</label>
+                                <select type="select" id="category-target" class="form-control" data-form-target="select" data-name="target">
+                                    <option value="_self" selected>_self</option>
+                                    <option value="_blank">_blank</option>
+                                    <option value="_parent">_parent</option>
+                                    <option value="_top">_top</option>
+                                </select>
+                            </fieldset>
+
+
+                            {#  Description  #}
+                            <fieldset class="form-group">
+                                <label for="basicInput">{{ LANGUAGE.catalog.product.edit.content_body.main.description }}</label>
+                                <div id="toolbar-container"></div>
+                                <div type="div" id="category-description" data-form-target="div" data-name="description">{{ product.description|raw }}</div>
+                            </fieldset>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">{{ LANGUAGE.catalog.category.modal.modal_footer.close }}</button>
+                    <button id="catalog-category-save" type="button" class="btn btn-outline-primary" data-dismiss="modal">{{ LANGUAGE.catalog.category.modal.modal_footer.save }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+{% block script_bottom %}
+    <style>
+        .autocomplete-suggestions { border: 1px solid #2c9b86; background: #FFF; overflow: auto; }
+        .autocomplete-suggestion { padding: 5px 6px; white-space: nowrap; overflow: hidden; cursor: pointer }
+        .autocomplete-selected { background: #F0F0F0; }
+        .autocomplete-suggestions strong { font-weight: normal; color: #b53430; }
+        .autocomplete-group { padding: 2px 5px; }
+        .autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+    </style>
+
+    <script src="/admin/assets/js/components/jQuery-Autocomplete/src/jquery.autocomplete.js"></script>
+
+    <script src="/admin/app-assets/vendors/js/tables/jquery.dataTables.min.js"></script>
+    <script src="/admin/app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="/admin/app-assets/vendors/js/tables/datatable/dataTables.select.min.js"></script>
+    <script src="/admin/app-assets/vendors/js/tables/datatable/dataTables.keyTable.min.js"></script>
+    <script src="/admin/app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+
+    <script type="text/javascript" src="/admin/JsController/catalog/category/CategoryController.js"></script>
+    <script src="/admin/assets/js/customized/catalog.category.list.js"></script>
+{% endblock %}
