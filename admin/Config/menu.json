@@ -1,0 +1,60 @@
+{
+  "dashboard": {
+
+    "root": true,
+    "title": "Панель управления",
+    "href": "/admin",
+    "icon": "fa fa-dashboard",
+    "child": null
+  },
+
+  "file_manager": {
+
+    "root": true,
+    "title": "Файловый менеджер",
+    "href": "/admin/page/file.manager",
+    "icon": "fa fa-download",
+    "child": null
+  },
+
+  "sales": {
+
+    "root": true,
+    "title": "Продажи",
+    "href": "",
+    "icon": "fa fa-shopping-basket",
+    "child": {
+
+      "order_list": {
+        "title": "Менеджер заказов",
+        "href": "/admin/page/order.orderManager",
+        "icon": "",
+        "child": null
+      }
+    }
+  },
+
+  "catalog": {
+
+    "root": true,
+    "title": "Каталог",
+    "href": "",
+    "icon": "fa fa-tags",
+    "child": {
+
+      "category": {
+        "title": "Категории",
+        "href": "/admin/page/category.list",
+        "icon": "",
+        "child": null
+      },
+
+      "product": {
+        "title": "Товары",
+        "href": "/admin/page/product.list",
+        "icon": "",
+        "child": null
+      }
+    }
+  }
+}
